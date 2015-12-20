@@ -1,13 +1,21 @@
 import sys
 import time
+import config
 import RPi.GPIO as pi
 
 class Player:
-    def __init__(self):
+    def __init__(self, console=False):
         self.song = []
+        self.console = console
+        if not console:
+            pi.setup(config.PIN1, pi.OUT)
 
     def set_output(self, vol):
-        sys.stdout.write('#' * int(3*vol) + '             ')
+        if console:
+            sys.stdout.write('#' * int(3*vol) + '             ')
+        else:
+            vol = vol > 0.5 and 1 or 0
+            pi.output(config.PIN1, vol)
         self.restart_line()
 
     def restart_line(self):
@@ -23,6 +31,7 @@ class Player:
             time.sleep(dur)
 
 if __name__ == "__main__":
-    p = Player()
+    p = Player(console=True)
     p.load('')
     p.play()
+    pi.cleanup()
