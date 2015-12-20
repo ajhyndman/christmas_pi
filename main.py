@@ -1,11 +1,12 @@
 import sys
 import time
 import config
-#import RPi.GPIO as pi
+import RPi.GPIO as pi
 # I can't import/install gpio on windows
-pi = None
+#pi = None
 
 import pygame
+#import librosa
 
 class Player:
     def __init__(self, console=False):
@@ -17,6 +18,7 @@ class Player:
     def set_output(self, vol):
         if self.console:
             sys.stdout.write('#' * int(3*vol) + '             ')
+            sys.stdout.flush()
         else:
             vol = vol > 0.5 and 1 or 0
             pi.output(config.PIN1, vol)
@@ -27,14 +29,29 @@ class Player:
         sys.stdout.flush()
 
     def load(self, file):
+        sys.stdout.write('Loading\n')
+        sys.stdout.flush()
         pygame.init()
         pygame.mixer.init()
         pygame.mixer.music.load(file)
         #self.song = [(1,0.1),(3,0.2),(0,0.3)] * 10
+        '''
+        y, sr = librosa.load(file)
+        tempo, beat_frames = librosa.beat.beat_track(y=y, sr=sr)
+        beat_times = librosa.frames_to_time(best_frames, sr=sr)
+        sys.stdout.write('Beat times: \n %s \n' % beat_times)
+        '''
+        sys.stdout.write('Loaded\n')
+        sys.stdout.flush()
 
     def play(self):
         pygame.mixer.music.play()
-        while pygame.mixer.music.get_busy():
+        count = 0
+        while pygame.mixer.music.get_busy() and count <= 100:
+            count += 1
+            sys.stdout.write('Count is: %s' % count)
+            sys.stdout.flush()
+            self.restart_line()
             pygame.time.Clock().tick(10)
         #for vol, dur in self.song:
         #    self.set_output(vol)
