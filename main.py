@@ -1,9 +1,9 @@
 import sys
 import time
 import config
-import RPi.GPIO as pi
+#import RPi.GPIO as pi
 # I can't import/install gpio on windows
-#pi = None
+pi = None
 
 import pygame
 #import librosa
@@ -45,11 +45,12 @@ class Player:
         sys.stdout.flush()
 
     def play(self):
+        pygame.display.set_mode((100, 100))
         pygame.mixer.music.play()
         count = 0
-        while pygame.mixer.music.get_busy() and count <= 100:
+        while pygame.mixer.music.get_busy() and count <= 40:
             count += 1
-            sys.stdout.write('Count is: %s' % count)
+            sys.stdout.write('Count is: %s, volume is %s' % (count, pygame.mixer.music.get_volume()))
             sys.stdout.flush()
             self.restart_line()
             pygame.time.Clock().tick(10)
@@ -61,5 +62,5 @@ class Player:
 
 if __name__ == "__main__":
     p = Player(console=True)
-    p.load('songs/Witch Hunt.mp3')
+    p.load('songs/Witch Hunt.ogg')
     p.play()
