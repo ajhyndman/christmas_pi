@@ -8,4 +8,4 @@ for i in range(20):
     time.sleep(0.1)
     GPIO.output(config.PIN1, (i+1)%2)
 
-gpio.cleanup()
+GPIO.cleanup()
