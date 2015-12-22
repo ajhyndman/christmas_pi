@@ -24,7 +24,7 @@ class Switch:
         GPIO.output(self.id, self.status)
         
     def get_status(self):
-        return self.status
+        return 'off' if self.status else 'on'
     
     def on(self):
         self.status = GPIO.LOW
