@@ -1,1 +1,5 @@
-<a href="#">Switch 1 is currently {{ switches.switch_one.get_status }}</a>
+<ul>
+{% for status in switch_status %}
+<li><a href="{% url 'switches:toggle' forloop.counter %}">Switch {{ forloop.counter }} is currently {{ status }}</a></li>
+{% endfor %}
+</ul>

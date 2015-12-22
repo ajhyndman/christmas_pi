@@ -16,13 +16,14 @@ GPIO.setmode(GPIO.BOARD)
 
 class Switch:
     id = 0
-    status = False
+    status = GPIO.HIGH
     
     def __init__(self, id):
         self.id = id
         GPIO.setup(self.id, GPIO.OUT)
+        GPIO.output(self.id, self.status)
         
-    def getStatus(self):
+    def get_status(self):
         return self.status
     
     def on(self):
@@ -32,13 +33,12 @@ class Switch:
     def off(self):
         self.status = GPIO.HIGH
         GPIO.output(self.id, self.status)
+        
+    def toggle(self):
+        self.status = not self.status
+        GPIO.output(self.id, self.status)        
 
 
 
 
-switches = {
-    'switch_one'   : Switch(11),
-    'switch_two'   : Switch(12),
-    'switch_three' : Switch(15),
-    'switch_four'  : Switch(16),
-}
+SWITCHES = [Switch(i) for i in [11, 12, 15, 16]]
