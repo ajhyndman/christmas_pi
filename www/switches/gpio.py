@@ -31,9 +31,12 @@ class Switch:
     def off(self):
         self.status = GPIO.HIGH
         GPIO.output(self.id, self.status)
-        
-        
-switch_one   = new Switch(11)
-switch_two   = new Switch(12)
-switch_three = new Switch(15)
-switch_four  = new Switch(16)
+
+
+
+
+
+switch_one   = Switch(11)
+switch_two   = Switch(12)
+switch_three = Switch(15)
+switch_four  = Switch(16)
