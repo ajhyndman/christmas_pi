@@ -1,13 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from . import gpio
 
 # Create your views here.
 def index(request):
-    
-    context = {
-        'switch_one'   : gpio.switch_one,
-        'switch_two'   : gpio.switch_two,
-        'switch_three' : gpio.switch_three,
-        'switch_four'  : gpio.switch_four,
-    }
+    context = {'switches': gpio.switches}
     return render(request, 'switches/index.html', context)
