@@ -15,18 +15,22 @@ GPIO.setmode(GPIO.BOARD)
 
 class Switch:
     id = 0
+    status = False
     
     def __init__(self, id):
         self.id = id
         GPIO.setup(self.id, GPIO.OUT)
         
-    def getStatus():
+    def getStatus(self):
+        return self.status
     
-    def on():
-        GPIO.output(self.id, GPIO.LOW)
+    def on(self):
+        self.status = GPIO.LOW
+        GPIO.output(self.id, self.status)
         
-    def off():
-        GPIO.output(self.id, GPIO.HIGH)
+    def off(self):
+        self.status = GPIO.HIGH
+        GPIO.output(self.id, self.status)
         
         
 switch_one   = new Switch(11)
