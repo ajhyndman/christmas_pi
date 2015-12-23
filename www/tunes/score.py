@@ -17,8 +17,9 @@ class Note:
     def play(self):
         try:
             self.switch.on()
-            time.sleep(self.delay)
+            time.sleep(self.delay*0.75)
             self.switch.off()
+            time.sleep(self.delay*0.25)
         except:
             print('Notes must be played with an object of type "Switch".')
 
