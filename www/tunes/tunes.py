@@ -19,7 +19,6 @@ class Tune:
     def play(self):
         for note in self.score:
             note.play()
-        gpio.cleanup()
 
 
 
