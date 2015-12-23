@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     # ex: /tunes/5/play/
     url(r'^(?P<pk>[0-9]+)/play/$', views.play, name='play'),
+    url(r'^playmusic/$', views.playmusic, name='playmusic'),
 ]
