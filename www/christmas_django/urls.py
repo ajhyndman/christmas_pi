@@ -17,9 +17,11 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from . import views
+
 urlpatterns = [
     url(r'^switches/', include('switches.urls')),
     url(r'^tunes/', include('tunes.urls')),
     url(r'^admin/', admin.site.urls),
-    # url(r'^$', switches.views.index, name='views:index'),
+    url(r'^$', views.index, name='index'),
 ]

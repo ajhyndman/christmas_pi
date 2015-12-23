@@ -1,0 +1,12 @@
+{% extends 'masters/main.html' %}
+
+
+{% block content %}
+
+{% for link in nav_links %}
+<div class="row center">
+<a class="btn-large waves-effect waves-light teal darken-2" href="{{ link.url }}">{{ link.label }}</a>
+</div>
+{% endfor %}
+
+{% endblock %}
