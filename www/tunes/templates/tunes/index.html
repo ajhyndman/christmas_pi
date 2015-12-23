@@ -1,0 +1,12 @@
+{% extends 'masters/main.html' %}
+
+
+{% block content %}
+
+{% for name in tunes %}
+<div class="row center">
+<a class="btn-large waves-effect waves-light teal darken-2" href="{% url 'tunes:play' forloop.counter %}">Switch {{ forloop.counter }}. {{ name }}</a>
+</div>
+{% endfor %}
+
+{% endblock %}
