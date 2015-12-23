@@ -20,4 +20,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^switches/', include('switches.urls')),
     url(r'^admin/', admin.site.urls),
+    # url(r'^$', switches.views.index, name='views:index'),
 ]

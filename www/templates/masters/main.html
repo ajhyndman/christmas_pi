@@ -1,0 +1,56 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Raspberry Pi</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'css/materialize.css' %}" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/style.css' %}'" type="text/css" media="screen,projection"/>
+</head>
+<body>
+
+
+  <div class="container">
+    <div class="section">
+
+      {% block content %}
+      {% endblock %}
+
+    </div>
+  </div>
+
+
+  <!--<footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+
+        </div>
+        <div class="col l3 s12">
+
+        </div>
+        <div class="col l3 s12">
+
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      
+      </div>
+    </div>
+  </footer>-->
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+
+  </body>
+</html>

@@ -41,4 +41,5 @@ class Switch:
 
 
 
+
 SWITCHES = [Switch(i) for i in [11, 12, 15, 16]]
