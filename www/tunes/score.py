@@ -59,6 +59,6 @@ def build_score_from_beats(beatlist, switch):
         tprev = t
         t = beat
         tdelta = t - tprev
-        notelist.append(Note(tdelta), switch)
+        score.append(Note(tdelta, switch))
 
     return score
