@@ -4,13 +4,23 @@
 {% block content %}
 
 {% for name in tunes %}
-<div class="row center">
-<a class="btn-large waves-effect waves-light teal darken-2" href="{% url 'tunes:play' forloop.counter %}">Switch {{ forloop.counter }}. {{ name }}</a>
-</div>
+  <div class="row center">
+    <a class="btn-large waves-effect waves-light teal darken-2"
+       href="{% url 'tunes:play' forloop.counter %}">Switch {{ forloop.counter }}. {{ name }}
+    </a>
+  </div>
 {% endfor %}
 
-<div class="row center">
-<a class="btn-large waves-effect waves-light teal darken-2" href="{% url 'tunes:playmusic' %}">Play Audio</a>
-<a class="btn-large waves-effect waves-light teal darken-2" href="{% url 'tunes:stopmusic' %}">Stop Audio</a>
-</div>
+<form action="/tunes/playmusic/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+
+{% if is_playing %}
+  <div class="row center">
+    <a class="btn-large waves-effect waves-light teal darken-2" href="{% url 'tunes:stopmusic' %}">Stop Audio</a>
+  </div>
+{% endif %}
+
 {% endblock %}
