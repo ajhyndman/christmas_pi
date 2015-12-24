@@ -5,12 +5,15 @@ class MusicPlayer:
 
     def __init__(self):
         self.songs = [
-            "/home/pi/Music/ChristmasCanon.mp3",
-            "/home/pi/Music/JingleBells.mp3",
-            "/home/pi/Music/Witch Hunt.mp3",
+            ("/home/pi/Music/ChristmasCanon.mp3", "Christmas Canon"),
+            ("/home/pi/Music/JingleBells.mp3", "Jingle Bells"),
+            ("/home/pi/Music/Witch Hunt.mp3", "Witch HUnt"),
         ]
         pygame.mixer.init()
-        self.load(self.songs[0])
+        self.load(self.songs[self.selected][0])
+
+    def song_list(self):
+        return ((index, song[1]) for index, song in enumerate(self.songs))
 
     def load(self, filename):
         self.song = filename
@@ -21,7 +24,7 @@ class MusicPlayer:
             self.stop()
         if index != self.selected:
             self.selected = index
-            self.load(self.songs[index])
+            self.load(self.songs[index][0])
         pygame.mixer.music.play()
 
     def is_playing(self):

@@ -1,5 +1,6 @@
 from django import forms
+import musicplayer
 
 class PlaySongForm(forms.Form):
-    CHOICES = ( (0, 'Christmas Canon'), (1, 'Jingle Bells'), (2, 'Witch Hunt') )
+    CHOICES = musicplayer.PLAYER.song_list()
     song = forms.ChoiceField(widget=forms.Select, choices=CHOICES, label='Song:')
