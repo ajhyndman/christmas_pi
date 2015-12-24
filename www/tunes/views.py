@@ -3,9 +3,8 @@ from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from . import score
 from . import tunes
-from subprocess import call
+import musicplayer
 
-# Create your views here.
 def index(request):
     context = {'tunes': [tune.name for tune in tunes.TUNES]}
     return render(request, 'tunes/index.html', context)
@@ -16,5 +15,9 @@ def play(request, pk):
     return HttpResponseRedirect(reverse('tunes:index', args=()))
 
 def playmusic(request):
-    call(["omxplayer", "/home/pi/christmas_pi/songs/Witch Hunt.mp3"])
+    musicplayer.PLAYER.play()
+    return HttpResponseRedirect(reverse('tunes:index', args=()))
+
+def stopmusic(request):
+    musicplayer.PLAYER.stop()
     return HttpResponseRedirect(reverse('tunes:index', args=()))
