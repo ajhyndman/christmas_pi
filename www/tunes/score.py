@@ -1,5 +1,5 @@
 import time
-from . import gpio
+import gpio
 
 
 BEAT_DURATION = 0.1

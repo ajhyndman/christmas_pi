@@ -1,5 +1,5 @@
-from . import gpio
-from . import score
+import gpio
+import score
 import tracks.jinglebells as jinglebells
 
 
@@ -56,6 +56,7 @@ TUNES = [
             score.Note(1, gpio.SWITCHES[2]),
         ]),
 
+    # truncates to the first 20 beats (~10s)
     Tune('Jingle Bells',
-        score.build_score_from_beats(jinglebells.harmonic, gpio.SWITCHES[2]))
+        score.build_score_from_beats(jinglebells.harmonic, gpio.SWITCHES[2])[:30])
 ]

@@ -1,7 +1,7 @@
 try:
     import RPi.GPIO as GPIO
 except:
-    from . import SpoofGPIO as GPIO
+    import SpoofGPIO as GPIO
     print("Server could not locate RPi.GPIO, using a development placeholder instead")
 
 
