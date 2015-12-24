@@ -1,30 +1,23 @@
-from subprocess import Popen
-
+import pygame
 
 class MusicPlayer:
-    playing = False
-    process = None
-    song = None
-
     def __init__(self):
+        pygame.mixer.init()
         self.load("/home/pi/christmas_pi/songs/Witch Hunt.mp3")
 
     def load(self, filename):
         self.song = filename
+        pygame.mixer.music.load(filename)
 
     def play(self):
         if self.is_playing():
             self.stop()
-        self.playing = True
-        command = ["omxplayer", self.song]
-        self.process = Popen(command)
+        pygame.mixer.music.play()
 
     def is_playing(self):
-        self.playing = self.playing and self.process.poll()
-        return self.playing
+        return pygame.mixer.music.get_busy()
 
     def stop(self):
-        if self.is_playing():
-            self.process.terminate()
+        pygame.mixer.music.stop()
 
 PLAYER = MusicPlayer()
