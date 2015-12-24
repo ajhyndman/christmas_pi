@@ -1,5 +1,6 @@
 from . import gpio
 from . import score
+from tracks import beats
 
 
 
@@ -54,4 +55,7 @@ TUNES = [
             score.Note(0.25, gpio.SWITCHES[1]),
             score.Note(1, gpio.SWITCHES[2]),
         ]),
+
+    Tune('Jingle Bells',
+        [score.build_score_from_beats(beats.jinglebells.harmonic, gpio.SWITCHES(2))]
 ]

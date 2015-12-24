@@ -2,6 +2,9 @@ import time
 from . import gpio
 
 
+BEAT_DURATION = 0.1
+
+
 
 
 
@@ -35,3 +38,27 @@ class Rest:
     
     def play(self):
         time.sleep(self.delay)
+
+
+
+
+
+# class Score:
+#     notelist = []
+    
+#     def __init__(self, notelist):
+#         self.notelist = notelist
+
+
+# Build a Score from a list of beat timings
+def build_score_from_beats(beatlist, switch):
+    score = []
+    t, tprev, tdelta = 0, 0, 0
+    
+    for beat in beatlist:
+        tprev = t
+        t = beat
+        tdelta = t - tprev
+        notelist.append(Note(tdelta), switch)
+
+    return score
