@@ -9,4 +9,8 @@
 </div>
 {% endfor %}
 
+<div class="row center">
+<a class="btn-large waves-effect waves-light teal darken-2" href="{% url 'tunes:playmusic' %}">Play Audio</a>
+<a class="btn-large waves-effect waves-light teal darken-2" href="{% url 'tunes:stopmusic' %}">Stop Audio</a>
+</div>
 {% endblock %}
