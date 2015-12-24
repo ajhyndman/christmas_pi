@@ -1,9 +1,0 @@
-
-PIN1 = 11
-PIN2 = 12
-PIN3 = 15
-PIN4 = 16
-PINS = [PIN1, PIN2, PIN3, PIN4]
-
-ON = 0
-OFF = 1
