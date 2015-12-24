@@ -9,4 +9,5 @@ urlpatterns = [
     # ex: /tunes/5/play/
     url(r'^(?P<pk>[0-9]+)/play/$', views.play, name='play'),
     url(r'^playmusic/$', views.playmusic, name='playmusic'),
+    url(r'^stopmusic/$', views.stopmusic, name='stopmusic'),
 ]
