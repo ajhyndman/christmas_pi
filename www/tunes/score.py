@@ -34,10 +34,10 @@ class Note:
         
         try:
             for switch in self.switches:
-                self.switch.on()
+                switch.on()
             time.sleep(self.delay*0.75*self.beat)
             for switch in self.switches:
-                self.switch.off()
+                switch.off()
             time.sleep(self.delay*0.25*self.beat)
         except:
             print('Notes must be played with an object of type "Switch".')
