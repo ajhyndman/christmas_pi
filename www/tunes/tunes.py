@@ -7,6 +7,12 @@ import score
 
 
 
+TSO_CANON_BPM = 136
+
+
+
+
+
 # Some light combinations in OLD_Note style.
 A = One =   score.OLD_Note(0.5, [gpio.SWITCHES[0], gpio.SWITCHES[1], gpio.SWITCHES[2]])
 B = Two =   score.OLD_Note(0.5, [gpio.SWITCHES[1], gpio.SWITCHES[2]])
@@ -34,7 +40,8 @@ ER = EIGHTH_REST = score.Rest(0.5)
 
 
 TUNES = [
-    score.Tune('Mary Had a Little Lamb',
+    score.Tune(
+        'Mary Had a Little Lamb',
         60,
         [
             score.OLD_Note(0.25, [gpio.SWITCHES[0]]),
@@ -70,7 +77,8 @@ TUNES = [
     #     1,
     #     score.build_score_from_beats(jinglebells.harmonic, gpio.SWITCHES[2])[:30]),
         
-    score.Tune('Pachelbel\'s Canon (Bass Voice)',
+    score.Tune(
+        'Pachelbel\'s Canon (Bass Voice)',
         80,
         [
             D, A, B, F, G, D, G, A,
@@ -96,11 +104,9 @@ TUNES = [
 
     score.Track_Compilation(
         'Pachelbel\'s Canon (Melody)',
-        137,
+        TSO_CANON_BPM,
         [
-            # score.Track(0, [score.Note(1), score.Note(1), score.Rest(2), score.Note(0.5), score.Note(0.5)]),
-            
-            # Posts
+            # Posts Track
             score.Track(0,
                 [
                     ## PAGE 1 ##
@@ -156,14 +162,16 @@ TUNES = [
                     # 3:18
                     Q, E, ER, Q, R,   E, ER, ER, E, R,   score.Note(6)
                 ] + ([
+                    # ~3:24
                     # Ask Violet: 16th notes?
                     score.Note(1/3), score.Note(1/3), score.Note(1/3),
                 ] * 16)
             ),
             
-            # Bush
+            # Bush Track
             score.Track(1,
                 [
+                    ## PAGE 1 ##
                     # 0:00
                     R, Q, R, Q,   R, Q, R, Q,   R, Q, R, Q,   R, Q, R, Q,
                     R, Q, R, Q,   R, Q, R, Q,   R, Q, R, Q,   R, Q, R, Q,
@@ -174,14 +182,50 @@ TUNES = [
                     R, Q, R, Q,   R, Q, R, Q,   R, Q, R, Q,   R, Q, R, Q,
                     R, Q, R, Q,   R, Q, R, Q,   R, Q, R, Q,   R, Q, R, Q,
                 ] + [
+                    ## PAGE 2 ##
                     # 0:42
-                    
-                ]
+                    QS, ES, ER, QS, E, ER,   ER, E, R, ER, E, R,   QS, ES, ER, QS, ES, ER,   ER, E, R, ER, E, R,
+                    Q, ER, E, E, E, ER, E,   ER, E, R, ER, E, R,   Q, ER, E, Q, ER, E,   ER, E, R, ER, E, R
+                ] + ([
+                    # 0:57
+                    Q, Q, Q, Q,   Q, Q, Q, Q,   Q, Q, Q, Q,   Q, Q, Q, Q
+                ] * 8) + ([
+                    # 1:55
+                    Q, Q, Q, Q,   Q, Q, Q, Q,   Q, Q, Q, Q,   Q, Q, Q, Q
+                ] * 3) + [
+                    ## PAGE 3 ##
+                    # 2:16
+                    Q, Q, Q, Q,   Q, Q, Q, Q,   Q, Q, Q, Q,   Q, Q, Q, Q
+                ] + [
+                    # ~2:25
+                    Q, Q, Q, R,   R, Q, R, R,   score.Note(3), R,   R, Q, R, R,
+                    W,   W,   R, R, R, R,   QS, QS, QS, QS
+                ] + [
+                    # 2:38
+                    score.Note(3), R,   R, Q, R, R,   score.Note(3), R,   R, Q, R, R,
+                    W,   W,   R, R, R, R,   QS, QS, QS, QS
+                ] + [
+                    ## PAGE 4 ##
+                    # 2:53
+                    Q, E, ER, Q, E, ER,   ER, E, R, ER, E, R,   Q, E, ER, Q, E, ER,   ER, E, R, ER, E, R,
+                    Q, ER, E, Q, ER, E,   ER, E, R, ER, E, R,   Q, ER, E, Q, ER, E,   ER, E, R, ER, E, R,
+                    Q, E, ER, Q, E, ER,   ER, E, R, ER, E, R,   Q, E, ER, Q, E, ER,   ER, E, R, ER, E, R,
+                ] + [
+                    # 3:14
+                    Q, ER, E, Q, ER, E,   ER, E, R, ER, E, R,   Q, ER, E, Q, ER, E,
+                    ER, E, R, ER, score.Note(5.5)
+                ] + ([
+                    # ~3:24
+                    # Ask Violet: 16th notes?
+                    score.Note(1/4), score.Note(1/4), score.Note(1/4), score.Note(1/4),
+                ] * 16)
             ),
             
-            # Tree
+            # Tree Track
             score.Track(2,
                 [
+                    ## PAGE 1 ##
+                    # 0:00
                     R, R, Q, R,   Q, R, R, Q,   R, R, Q, R,   Q, R, R, Q,
                     R, R, Q, R,   Q, R, R, Q,   R, R, Q, R,   Q, R, R, Q,
                     
@@ -190,6 +234,50 @@ TUNES = [
                     
                     R, R, Q, R,   Q, R, R, Q,   R, R, Q, R,   Q, R, R, Q,
                     R, R, Q, R,   Q, R, R, Q,   R, R, Q, R,   Q, R, R, Q,
+                ] + [
+                    ## PAGE 2 ##
+                    # 0:42
+                    Q, R, Q, ER, E,   R, E, ER, E, ER, ER, E,   Q, R, Q, ER, E,   R, E, ER, E, ER, ER, E,
+                    Q, R, Q, E, ER,   R, E, ER, E, ER, ER, E,   Q, R, Q, ES, ER,   R, E, ER, E, ER, ER, E,
+                ] + ([
+                    # 0:57
+                    R, H, R,   R, H, R,   R, H, R,   R, H, R, 
+                ] * 8) + ([
+                    # 1:55
+                    R, Q, R, Q,  R, E, ER, E, ER, E, ER,   R, Q, R, Q,   R, E, ER, E, ER, E, ER,
+                ] * 3) + [
+                    ## PAGE 3 ##
+                    # 2:16
+                    R, Q, R, Q,   R, E, ER, E, ER, E, ER,   R, Q, R, Q,   R, E, ER, E, ER, Q
+                ] + [
+                    # ~2:25
+                    score.Note(3), R,   R, R, Q, R,   score.Note(3), QS,   Q, R, R, Q,
+                    R, R, R, R,   W,   R, Q, R, Q,   W,
+                ] + [
+                    # 2:38
+                    score.Note(3), R,   R, R, Q, R,   score.Note(3), QS,   Q, R, R, Q,
+                    R, R, R, R,   W,   R, Q, R, Q,   W,
+                ] + [
+                    ## PAGE 4 ##
+                    # 2:53
+                    Q, R, Q, ER, E,   R, E, ER, E, ER, ER, E,   Q, R, Q, ER, E,   R, E, ER, E, ER, ER, E,
+                    Q, R, Q, E, ER,   R, E, ER, E, ER, ER, E,   Q, R, Q, E, ER,   R, E, ER, E, ER, ER, E,
+                    Q, R, Q, ER, E,   R, E, ER, E, ER, ER, E,   Q, R, Q, ER, E,   R, E, ER, E, ER, ER, E,
+                ] + [
+                    # 3:14
+                    Q, R, Q, E, ER,   R, E, ER, E, ER, ER, E,   Q, R, Q, E, ER,  R, E, ER, E, ER, ER, score.Note(4.5),
+                ] + ([
+                    # ~3:24
+                    # Ask Violet: 16th notes?
+                    score.Note(1/3), score.Note(1/3), score.Note(1/3),
+                ] * 16)
+            ),
+            
+            # Wall Track
+            score.Track(3,
+                [
+                    # 0:00-3:30
+                    score.Note(TSO_CANON_BPM*3.5)
                 ]
             )
         ]
