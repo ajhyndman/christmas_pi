@@ -5,13 +5,13 @@ import tracks.jinglebells as jinglebells
 
 
 
-A = Zero = score.Note(0.25 [gpio.SWITCHES[0], gpio.SWITCHES[1], gpio.SWITCHES[2])
-B = Zero = score.Note(0.25 [gpio.SWITCHES[1], gpio.SWITCHES[2])
-D = Zero = score.Note(0.25 [gpio.SWITCHES[0], gpio.SWITCHES[1])
-C = Zero = score.Note(0.25 [gpio.SWITCHES[0], gpio.SWITCHES[2])
-E = Zero = score.Note(0.25 [gpio.SWITCHES[2])
-F = Zero = score.Note(0.25 [gpio.SWITCHES[1])
-G = Zero = score.Note(0.25 [gpio.SWITCHES[0])
+A = One = score.Note(0.25, [gpio.SWITCHES[0], gpio.SWITCHES[1], gpio.SWITCHES[2]])
+B = Two = score.Note(0.25, [gpio.SWITCHES[1], gpio.SWITCHES[2]])
+D = Three = score.Note(0.25, [gpio.SWITCHES[0], gpio.SWITCHES[1]])
+C = Four = score.Note(0.25, [gpio.SWITCHES[0], gpio.SWITCHES[2]])
+E = Five = score.Note(0.25, [gpio.SWITCHES[2]])
+F = Six = score.Note(0.25, [gpio.SWITCHES[1]])
+G = Seven = score.Note(0.25, [gpio.SWITCHES[0]])
 REST = score.Rest(0.25)
 
 
