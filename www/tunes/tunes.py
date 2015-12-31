@@ -75,9 +75,9 @@ TUNES = [
         ]),
 
     # truncates to the first 20 beats (~10s)
-    Tune('Jingle Bells',
-        1,
-        score.build_score_from_beats(jinglebells.harmonic, gpio.SWITCHES[2])[:30]),
+    # Tune('Jingle Bells',
+    #     1,
+    #     score.build_score_from_beats(jinglebells.harmonic, gpio.SWITCHES[2])[:30]),
         
     Tune('Pachelbel\'s Canon',
         0.8,
