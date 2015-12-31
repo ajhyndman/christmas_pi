@@ -33,10 +33,10 @@ class Note:
             self.beat = beat
         
         try:
-            for switch in switches:
+            for switch in self.switches:
                 self.switch.on()
             time.sleep(self.delay*0.75*self.beat)
-            for switch in switches:
+            for switch in self.switches:
                 self.switch.off()
             time.sleep(self.delay*0.25*self.beat)
         except:
