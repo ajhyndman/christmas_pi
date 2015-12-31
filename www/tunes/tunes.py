@@ -80,7 +80,7 @@ TUNES = [
         score.build_score_from_beats(jinglebells.harmonic, gpio.SWITCHES[2])[:30]),
         
     Tune('Pachelbel\'s Canon',
-        60/75,
+        0.8,
         [
             D, A, B, F, G, D, G, A,
             D, A, B, F, G, D, G, A,
