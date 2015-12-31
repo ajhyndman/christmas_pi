@@ -9,7 +9,11 @@ class MusicPlayer:
             ("/home/pi/Music/JingleBells.mp3", "Jingle Bells"),
             ("/home/pi/Music/Witch Hunt.mp3", "Witch HUnt"),
         ]
-        pygame.mixer.init()
+        try:
+            pygame.mixer.init()
+        except:
+            print('No sound is enabled on this device.  Continuing.')
+            return
         self.load(self.songs[self.selected][0])
 
     def song_list(self):

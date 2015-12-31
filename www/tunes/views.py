@@ -10,7 +10,7 @@ def index(request):
     context = {
         'tunes': [tune.name for tune in tunes.TUNES],
         'form': forms.PlaySongForm(),
-        'is_playing': musicplayer.PLAYER.is_playing(),
+        # 'is_playing': musicplayer.PLAYER.is_playing(),
     }
     return render(request, 'tunes/index.html', context)
 
