@@ -77,6 +77,21 @@ TUNES = [
         D, A, B, F, G, D, G, A,
         D, A, B, F, G, D, G, A,
         D, A, B, F, G, D, G, A,
+        D, A, B, F, G, D, G, A,
+        
+        D, A, B, F, G, D, G, A,
+        D, A, B, F, G, D, G, A,
+        D, A, B, F, G, D, G, A,
+        D, A, B, F, G, D, G, A,
+        
+        D, A, B, F, G, D, G, A,
+        D, A, B, F, G, D, G, A,
+        D, A, B, F, G, D, G, A,
+        D, A, B, F, G, D, G, A,
+        
+        D, A, B, F, G, D, G, A,
+        D, A, B, F, G, D, G, A,
+        D, A, B, F, G, D, G, A,
         D, A, B, F, G, D, G, A
     ])
 ]
