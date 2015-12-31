@@ -33,6 +33,11 @@ class Tune:
     def play(self):
         for note in self.score:
             note.play(self.beat)
+            
+        gpio.SWITCHES[0].on()
+        gpio.SWITCHES[1].on()
+        gpio.SWITCHES[2].on()
+        gpio.SWITCHES[3].on()
 
 
 
