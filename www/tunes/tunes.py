@@ -5,14 +5,14 @@ import tracks.jinglebells as jinglebells
 
 
 
-A = One = score.Note(0.25, [gpio.SWITCHES[0], gpio.SWITCHES[1], gpio.SWITCHES[2]])
-B = Two = score.Note(0.25, [gpio.SWITCHES[1], gpio.SWITCHES[2]])
-D = Three = score.Note(0.25, [gpio.SWITCHES[0], gpio.SWITCHES[1]])
-C = Four = score.Note(0.25, [gpio.SWITCHES[0], gpio.SWITCHES[2]])
-E = Five = score.Note(0.25, [gpio.SWITCHES[2]])
-F = Six = score.Note(0.25, [gpio.SWITCHES[1]])
-G = Seven = score.Note(0.25, [gpio.SWITCHES[0]])
-REST = score.Rest(0.25)
+A = One = score.Note(1, [gpio.SWITCHES[0], gpio.SWITCHES[1], gpio.SWITCHES[2]])
+B = Two = score.Note(1, [gpio.SWITCHES[1], gpio.SWITCHES[2]])
+D = Three = score.Note(1, [gpio.SWITCHES[0], gpio.SWITCHES[1]])
+C = Four = score.Note(1, [gpio.SWITCHES[0], gpio.SWITCHES[2]])
+E = Five = score.Note(1, [gpio.SWITCHES[2]])
+F = Six = score.Note(1, [gpio.SWITCHES[1]])
+G = Seven = score.Note(1, [gpio.SWITCHES[0]])
+REST = score.Rest(1)
 
 
 
@@ -80,7 +80,7 @@ TUNES = [
         score.build_score_from_beats(jinglebells.harmonic, gpio.SWITCHES[2])[:30]),
         
     Tune('Pachelbel\'s Canon',
-        1.75*4,
+        60/75,
         [
             D, A, B, F, G, D, G, A,
             D, A, B, F, G, D, G, A,
