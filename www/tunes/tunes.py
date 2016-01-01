@@ -304,8 +304,8 @@ TUNES = [
                     R, Q, R, R,   Q, R, R, Q,   R, Q, R, R,   Q, R, R, Q,
                     R, Q, R, R,   Q, R, R, Q,   R, Q, R, R,   Q, R, R, Q,
                     
-                    QS, QS, QS, QS,   score.Note(12),
-                    QS, QS, QS, QS,   score.Note(12),
+                    QS, QS, QS, score.Note(13),
+                    QS, QS, QS, score.Note(13),
                     
                     R, Q, R, R,   Q, R, R, Q,   R, Q, R, R,   Q, R, R, Q,
                     R, Q, R, R,   Q, R, R, Q,   R, Q, R, R,   Q, R, R, Q,
@@ -367,8 +367,8 @@ TUNES = [
                     Q, R, Q, R,   Q, R, Q, R,   Q, R, Q, R,   Q, R, Q, R,
                     Q, R, Q, R,   Q, R, Q, R,   Q, R, Q, R,   Q, R, Q, R,
                     
-                    W,   QS, QS, QS, QS,   W,   QS, QS, QS, QS,
-                    W,   QS, QS, QS, QS,   W,   QS, QS, QS, QS,
+                    W,   QS, QS, QS, score.Note(5),   QS, QS, QS, QS,
+                    W,   QS, QS, QS, score.Note(5),   QS, QS, QS, QS,
                     
                     Q, R, Q, R,   Q, R, Q, R,   Q, R, Q, R,   Q, R, Q, R,
                     Q, R, Q, R,   Q, R, Q, R,   Q, R, Q, R,   Q, R, Q, R,
@@ -421,8 +421,8 @@ TUNES = [
                     Q, R, R, Q,   R, Q, R, R,   Q, R, R, Q,   R, Q, R, R,
                     Q, R, R, Q,   R, Q, R, R,   Q, R, R, Q,   R, Q, R, R,
                     
-                    score.Note(8),   QS, QS, QS, QS,   W,
-                    score.Note(8),   QS, QS, QS, QS,   W,
+                    score.Note(8),   QS, QS, QS, score.Note(5),
+                    score.Note(8),   QS, QS, QS, score.Note(5),
                     
                     Q, R, R, Q,   R, Q, R, R,   Q, R, R, Q,   R, Q, R, R,
                     Q, R, R, Q,   R, Q, R, R,   Q, R, R, Q,   R, Q, R, R,
