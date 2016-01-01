@@ -5,7 +5,7 @@
 
 {% for status in switch_status %}
 <div class="row center">
-<a class="btn-large waves-effect waves-light teal darken-2" onclick="$.get('{% url 'switches:toggle' forloop.counter %}')">Switch {{ forloop.counter }} is currently {{ status }}</a>
+<a class="btn-large waves-effect waves-light teal darken-2" href="#" onclick="$.get('{% url 'switches:toggle' forloop.counter %}')">Switch {{ forloop.counter }} is currently {{ status }}</a>
 </div>
 {% endfor %}
 
