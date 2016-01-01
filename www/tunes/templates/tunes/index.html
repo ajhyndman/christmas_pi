@@ -15,7 +15,7 @@
        Switch {{ forloop.counter }}. {{ tune.name }}
     </a>
     {% if tune.path %}
-    <audio class="tune_audio" preload="auto" onplaying="$.get('{% url 'tunes:play' forloop.counter %}');">
+    <audio class="tune_audio" preload="auto" onplaying="$.get('{% url 'tunes:play' forloop.counter %}');" onpause="$.get('');">
         <source src="{% static tune.path %}" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
