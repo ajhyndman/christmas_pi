@@ -8,11 +8,14 @@
   <div class="row center">
     <a class="btn-large waves-effect waves-light teal darken-2"
        href="#"
-       onclick="$('.tune_audio').get({{ forloop.counter }} - 1).play();
-       $.get('{% url 'tunes:play' forloop.counter %}');">Switch {{ forloop.counter }}. {{ tune.name }}
+       onclick="
+       var audioFile = $('.tune_audio').get({{ forloop.counter }} - 1);
+       audioFile.paused ? audioFile.play() : audioFile.pause();
+       ">
+       Switch {{ forloop.counter }}. {{ tune.name }}
     </a>
     {% if tune.path %}
-    <audio class="tune_audio" preload="auto">
+    <audio class="tune_audio" preload="auto" onplaying="$.get('{% url 'tunes:play' forloop.counter %}');">
         <source src="{% static tune.path %}" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
