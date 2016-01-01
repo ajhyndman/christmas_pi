@@ -1,13 +1,21 @@
 {% extends 'masters/main.html' %}
+{% load staticfiles %}
 
 
 {% block content %}
 
-{% for name in tunes %}
+{% for tune in tunes %}
   <div class="row center">
     <a class="btn-large waves-effect waves-light teal darken-2"
-       href="{% url 'tunes:play' forloop.counter %}">Switch {{ forloop.counter }}. {{ name }}
+       href="{% url 'tunes:play' forloop.counter %}"
+       onclick="$('.tune_audio').get({{ forloop.counter }} - 1).play()">Switch {{ forloop.counter }}. {{ tune.name }}
     </a>
+    {% if tune.path %}
+    <audio class="tune_audio" preload="auto">
+        <source src="{% static tune.path %}" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    {% endif %}
   </div>
 {% endfor %}
 

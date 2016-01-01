@@ -7,7 +7,7 @@ import score
 
 
 
-TSO_CANON_BPM = 136
+TSO_CANON_BPM = 137
 
 
 
@@ -105,9 +105,11 @@ TUNES = [
     score.Track_Compilation(
         'Pachelbel\'s Canon (Melody)',
         TSO_CANON_BPM,
+        'audio/christmas_canon_3.5.mp3',
         [
             # Posts Track
             score.Track(0,
+                [ R, R ] +
                 [
                     ## PAGE 1 ##
                     # 0:00
@@ -170,6 +172,7 @@ TUNES = [
             
             # Bush Track
             score.Track(1,
+                [ R, R ] +
                 [
                     ## PAGE 1 ##
                     # 0:00
@@ -223,6 +226,7 @@ TUNES = [
             
             # Tree Track
             score.Track(2,
+                [ R, R ] +
                 [
                     ## PAGE 1 ##
                     # 0:00

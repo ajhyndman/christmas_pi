@@ -8,7 +8,7 @@ import forms
 
 def index(request):
     context = {
-        'tunes': [tune.name for tune in tunes.TUNES],
+        'tunes': [tune for tune in tunes.TUNES],
         'form': forms.PlaySongForm(),
         # 'is_playing': musicplayer.PLAYER.is_playing(),
     }

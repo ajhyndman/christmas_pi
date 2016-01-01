@@ -84,11 +84,14 @@ def OLD_build_score_from_beats(beatlist, switch):
 class Tune(object):
     name = 'default'
     bpm = 75 # beats per minute
+    path = None
     score = []
     
-    def __init__(self, name, bpm, score):
+    def __init__(self, name, bpm, path = None, score = []):
         self.name = name
         self.bpm = bpm
+        if path is not None:
+            self.path = path
         self.score = score
         
     def set_score(self, score):
@@ -155,8 +158,8 @@ class Track_Compilation(Tune):
     # Sorted list of 3-tuples: timestamp, bool on/off, switch number.
     switch_timings = []
     
-    def __init__(self, title, bpm, tracks = []):
-        super(Track_Compilation, self).__init__(title, bpm, [])
+    def __init__(self, title, bpm, path, tracks = []):
+        super(Track_Compilation, self).__init__(title, bpm, path, [])
         for track in tracks:
             self.add_track(track)
     
