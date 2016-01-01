@@ -143,12 +143,19 @@ class Track:
         timestamps = []
         beat_duration = 60.0/bpm
 
+        # record start and stop timestamps for each note
         for note in self.notes:
             if not note.silent:
                 timestamps.append((cur_timestamp, ON, self.switch))
             cur_timestamp += note.duration * beat_duration
+            
+            # truncate the note by 2/10ths of a beat or half of the duration of the note, whichever is smaller
+            separator = 0.2
+            if note.duration/2.0 <= 0.2:
+                separator = note.duration/2.0
+
             if not note.silent:
-                timestamps.append((cur_timestamp - 0.2 * beat_duration, OFF, self.switch))
+                timestamps.append((cur_timestamp - (separator * beat_duration), OFF, self.switch))
 
         return timestamps
         
@@ -160,6 +167,7 @@ class Track_Compilation(Tune):
     
     def __init__(self, title, bpm, path, tracks = []):
         super(Track_Compilation, self).__init__(title, bpm, path, [])
+        self.switch_timings = []
         for track in tracks:
             self.add_track(track)
     
