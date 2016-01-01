@@ -7,7 +7,7 @@ import score
 
 
 
-TSO_CANON_BPM = 137
+TSO_CANON_BPM = 135
 
 
 

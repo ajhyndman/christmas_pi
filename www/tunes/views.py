@@ -17,7 +17,8 @@ def index(request):
 def play(request, pk = 0):
     tune = tunes.TUNES[int(pk)-1]
     tune.play()
-    return HttpResponseRedirect(reverse('tunes:index', args=()))
+    # return HttpResponseRedirect(reverse('tunes:index', args=()))
+    return HttpResponse(status=200)
 
 def playmusic(request):
     song_index = 0
