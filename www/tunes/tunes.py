@@ -291,7 +291,7 @@ TUNES = [
     
 
     score.Track_Compilation(
-        '(TEST) Pachelbel\'s Canon',
+        '(01.01.16) Pachelbel\'s Canon',
         TSO_CANON_BPM,
         'audio/christmas_canon_3.5.mp3',
         [
@@ -350,12 +350,12 @@ TUNES = [
                     Q, E, ER, Q, R,   E, ER, ER, E, R, E, ER
                 ] + [
                     # 3:18
-                    Q, E, ER, Q, R,   E, ER, ER, E, R,   score.Note(6)
+                    Q, E, ER, Q, R,   E, ER, ER, E, R,   score.Note(5)
                 ] + ([
                     # ~3:24
                     # Ask Violet: 16th notes?
                     score.Note(1.0/3.0), score.Note(1.0/3.0), score.Note(1.0/3.0),
-                ] * 16)
+                ] * 12)
             ),
             
             # Bush Track
@@ -409,7 +409,7 @@ TUNES = [
                     # ~3:24
                     # Ask Violet: 16th notes?
                     score.Note(1.0/4.0), score.Note(1.0/4.0), score.Note(1.0/4.0), score.Note(1.0/4.0),
-                ] * 16)
+                ] * 12)
             ),
             
             # Tree Track
@@ -462,7 +462,7 @@ TUNES = [
                     # ~3:24
                     # Ask Violet: 16th notes?
                     score.Note(1.0/3.0), score.Note(1.0/3.0), score.Note(1.0/3.0),
-                ] * 16)
+                ] * 12)
             ),
             
             # Wall Track
